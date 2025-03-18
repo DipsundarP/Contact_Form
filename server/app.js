@@ -8,11 +8,13 @@ const cors = require("cors")
 const port = 8006;
 
 app.use(express.json());
-app.use(cors({
-    origin : "",
-    methods : 'POST , GET',
-    allowedHeaders: 'Content-Type,Authorization', // Allow specific headers
-}));
+app.use(
+  cors({
+    origin: "https://contact-form-eta-beryl.vercel.app",
+    methods: "POST , GET",
+    allowedHeaders: "Content-Type,Authorization", // Allow specific headers
+  })
+);
 app.use(router);
 
 app.listen(port, ()=>{

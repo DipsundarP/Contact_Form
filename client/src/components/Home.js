@@ -16,16 +16,19 @@ const Home = () => {
     
    try
    {
-      const res = await fetch("http://localhost:8006/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          text,
-        }),
-      });
+      const res = await fetch(
+        "https://contact-form-ts5m.onrender.com/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            text,
+          }),
+        }
+      );
       const data = await res.json();
       
       if(res.status===201)
